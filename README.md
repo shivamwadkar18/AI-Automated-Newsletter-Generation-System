@@ -1,5 +1,6 @@
 # AI-Automated-Newsletter-Generation-System
 An end-to-end LangChain-powered newsletter creation engine
+
 🚀 Overview
 
 This project is an automated newsletter generator that collects real-time news, extracts article text, analyzes content, summarizes it using AI, categorizes it, scores relevance, and finally creates a beautiful HTML newsletter using professional templates.
@@ -9,6 +10,7 @@ Built with LangChain + Gemini AI + Streamlit, the system automates the entire co
 Curate → Extract → Categorize → Score → Summarize → Generate → Preview → Download
 
 🎯 Features
+
 🔍 Content Curation
 
 RSS feed integration
