@@ -1,0 +1,8 @@
+feedparser
+beautifulsoup4
+requests
+python-dotenv
+langchain
+langchain-google-genai
+google-generativeai
+jinja2

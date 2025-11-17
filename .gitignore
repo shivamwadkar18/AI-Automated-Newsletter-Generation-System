@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+venv/
+env/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Environment variables
+.env
+
+# Output files
+output/*.html
+
+# Logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
