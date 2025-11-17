@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ newsletter_title }}</title>
+</head>
+
+<body style="
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    background: #0b0b0b;
+    color: #e5e5e5;
+">
+
+  <!-- Container -->
+  <div style="
+      max-width: 850px;
+      margin: auto;
+      background: #161616;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 0 20px rgba(0, 255, 120, 0.15);
+  ">
+
+    <!-- Header -->
+    <h1 style="
+        text-align: center;
+        color: #00ff88;
+        font-size: 32px;
+        margin-bottom: 10px;
+    ">
+      {{ newsletter_title }}
+    </h1>
+
+    <p style="
+        text-align: center;
+        color: #bfbfbf;
+        margin-top: 0;
+        margin-bottom: 30px;
+    ">
+      Curated with AI · Personalized for your interests
+    </p>
+
+    {% for category, articles in sections.items() %}
+
+      <!-- Category Section -->
+      <h2 style="
+          color: #00ffcc;
+          border-bottom: 2px solid #00ff88;
+          padding-bottom: 5px;
+          margin-top: 35px;
+      ">
+        {{ category }}
+      </h2>
+
+      {% for a in articles %}
+
+        <!-- Article Card -->
+        <div style="
+            background: #1e1e1e;
+            padding: 20px;
+            margin-top: 15px;
+            border-radius: 10px;
+            border: 1px solid #282828;
+            box-shadow: 0 0 12px rgba(0, 255, 150, 0.08);
+        ">
+
+          <!-- Title Link -->
+          <h3 style="margin: 0 0 12px 0;">
+            <a href="{{ a.url }}" style="
+                color: #00ffcc;
+                text-decoration: none;
+                font-size: 18px;
+            ">
+              {{ a.title }}
+            </a>
+          </h3>
+
+          <!-- Bullet Summary -->
+          <div style="
+              color: #dcdcdc;
+              font-size: 15px;
+              line-height: 1.6;
+              margin-bottom: 12px;
+          ">
+            {{ a.summary | safe }}
+          </div>
+
+          <!-- CTA Button -->
+          <a href="{{ a.url }}" style="
+              display: inline-block;
+              padding: 10px 16px;
+              background: #00ff88;
+              color: #000;
+              border-radius: 6px;
+              font-weight: bold;
+              text-decoration: none;
+          ">
+            Read Full Article →
+          </a>
+
+        </div>
+
+      {% endfor %}
+
+    {% endfor %}
+
+    <!-- Footer -->
+    <div style="
+        margin-top: 40px;
+        text-align: center;
+        font-size: 14px;
+        color: #8b8b8b;
+    ">
+      Prefer different topics?
+      <a href="{{ manage_link }}" style="color:#00ffcc;">Manage preferences</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

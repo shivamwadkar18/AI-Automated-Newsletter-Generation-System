@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ newsletter_title }}</title>
+</head>
+<body style="font-family: Arial; background:#f4f7f4; padding:30px;">
+
+  <div style="max-width:900px; margin:auto; background:white; padding:30px;
+              border-radius:14px; border:1px solid #dce6dc;">
+
+    <h1 style="text-align:center; color:#0f5132;">
+      {{ newsletter_title }}
+    </h1>
+
+    <p style="text-align:center; color:#2e6b52;">
+      Market insights, financial trends & investment summaries.
+    </p>
+
+    {% for category, articles in sections.items() %}
+      <h2 style="margin-top:30px; color:#198754; border-bottom:2px solid #5dbb87; padding-bottom:5px;">
+        {{ category }}
+      </h2>
+
+      {% for a in articles %}
+        <div style="background:#eef7f1; padding:20px; border-radius:10px; margin-top:15px;
+                    border:1px solid #cfe8dc;">
+
+          <h3 style="margin:0 0 10px;">
+            <a href="{{ a.url }}" style="color:#146c43; text-decoration:none;">
+              {{ a.title }}
+            </a>
+          </h3>
+
+          <p style="color:#234f3b; line-height:1.5;">{{ a.summary | safe }}</p>
+
+          <a href="{{ a.url }}"
+             style="display:inline-block; background:#198754; color:white; padding:8px 14px;
+                    border-radius:6px; text-decoration:none;">
+            Read Full Article →
+          </a>
+
+        </div>
+      {% endfor %}
+    {% endfor %}
+
+  </div>
+</body>
+</html>

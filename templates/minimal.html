@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ newsletter_title }}</title>
+</head>
+<body style="font-family: Georgia, serif; background:#ffffff; padding:40px;">
+
+  <div style="max-width:800px; margin:auto;">
+
+    <h1 style="text-align:center; color:black; font-size:32px; letter-spacing:1px;">
+      {{ newsletter_title }}
+    </h1>
+
+    {% for category, articles in sections.items() %}
+      <h2 style="margin-top:40px; font-size:22px; border-bottom:1px solid #111; padding-bottom:6px;">
+        {{ category }}
+      </h2>
+
+      {% for a in articles %}
+        <div style="margin-top:18px; padding-bottom:20px; border-bottom:1px solid #ccc;">
+
+          <h3 style="margin:0 0 5px;">
+            <a href="{{ a.url }}" style="color:black; text-decoration:none;">
+              {{ a.title }}
+            </a>
+          </h3>
+
+          <p style="margin:8px 0; color:#444; line-height:1.7;">{{ a.summary | safe }}</p>
+
+          <a href="{{ a.url }}" style="color:#000; text-decoration:underline;">
+            Read Full Article →
+          </a>
+
+        </div>
+      {% endfor %}
+    {% endfor %}
+
+  </div>
+
+</body>
+</html>
